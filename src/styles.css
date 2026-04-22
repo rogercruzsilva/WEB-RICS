@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Mostrar submenú en hover */
+.group:hover > ul {
+	display: block;
+}
+.group > ul {
+	display: none;
+}
