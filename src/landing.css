@@ -32,15 +32,13 @@ body.landing-page .brand-footer {
 
 /* ---------------------- LANDING HEADER (solo logo) ---------------------- */
 .landing-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: relative;
   z-index: 30;
   display: flex;
   align-items: center;
-  padding: 1.5rem 2.5rem;
-  background: transparent;
+  padding: 1rem 2.5rem;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
 }
 
 .landing-logo {
@@ -61,12 +59,11 @@ body.landing-page .brand-footer {
 }
 
 .landing-logo img {
-  height: 64px;
+  height: 56px;
   width: auto;
   max-width: 220px;
   object-fit: contain;
-  border-radius: 10px;
-  box-shadow: 0 8px 22px -10px rgba(15, 23, 42, 0.35);
+  display: block;
 }
 
 @media (max-width: 600px) {
@@ -89,9 +86,9 @@ body.landing-page .brand-footer {
 .landing-hero {
   position: relative;
   overflow: hidden;
-  background: #f8fafc;
-  padding: 5rem 1.5rem 4rem;
-  border-bottom: 1px solid #e2e8f0;
+  background: #eef2f7;
+  padding: 1rem 1.5rem 3.5rem;
+  border-bottom: 1px solid #d6deea;
 }
 
 .landing-hero::before {
@@ -99,11 +96,11 @@ body.landing-page .brand-footer {
   position: absolute;
   inset: 0;
   background-color: transparent;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'><path d='M48 0H0V48' fill='none' stroke='%230f172a' stroke-opacity='0.06' stroke-width='1'/></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'><path d='M48 0H0V48' fill='none' stroke='%230b1d3a' stroke-opacity='0.07' stroke-width='1'/></svg>");
   background-size: 48px 48px;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 .hero-inner {
@@ -115,6 +112,16 @@ body.landing-page .brand-footer {
   align-items: center;
   position: relative;
   z-index: 2;
+}
+
+.hero-logo {
+  display: block;
+  height: 56px;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+  margin: 0 0 1rem;
+  animation: fadeUp 0.6s ease both;
 }
 
 .hero-badge {
@@ -321,10 +328,10 @@ body.landing-page .brand-footer {
 
 /* ---------------------- LOGOS / TRUST STRIP ---------------------- */
 .trust-strip {
-  background: #fff;
-  border-top: 1px solid #f1f5f9;
-  border-bottom: 1px solid #f1f5f9;
-  padding: 2rem 1.5rem;
+  background: #0b1d3a;
+  border-top: none;
+  border-bottom: none;
+  padding: 2.25rem 1.5rem;
 }
 
 .trust-inner {
@@ -349,29 +356,29 @@ body.landing-page .brand-footer {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  color: #94a3b8;
+  color: #cbd5e1;
   font-weight: 700;
   font-size: 1rem;
   letter-spacing: 0.06em;
 }
 
 .trust-logos span {
-  opacity: 0.7;
+  opacity: 0.85;
   transition: opacity 0.2s, color 0.2s;
 }
 
 .trust-logos span:hover {
   opacity: 1;
-  color: #0b1d3a;
+  color: #ffffff;
 }
 
 /* ---------------------- SECTION BASE ---------------------- */
 .landing-section {
-  padding: 6rem 1.5rem;
+  padding: 4.5rem 1.5rem;
 }
 
 .landing-section.alt {
-  background: #f8fafc;
+  background: #eef2f7;
 }
 
 .section-inner {
@@ -419,11 +426,19 @@ body.landing-page .brand-footer {
 
 .stat-card {
   background: #fff;
-  border: 1px solid #eef2f7;
-  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #185FA5;
+  border-radius: 14px;
   padding: 1.5rem;
   transition: transform 0.25s, box-shadow 0.25s;
 }
+
+.stat-card:nth-child(2) { border-left-color: #3B6D11; }
+.stat-card:nth-child(2) .stat-num { color: #3B6D11; }
+.stat-card:nth-child(3) { border-left-color: #BA7517; }
+.stat-card:nth-child(3) .stat-num { color: #BA7517; }
+.stat-card:nth-child(4) { border-left-color: #534AB7; }
+.stat-card:nth-child(4) .stat-num { color: #534AB7; }
 
 .stat-card:hover {
   transform: translateY(-4px);
@@ -453,8 +468,9 @@ body.landing-page .brand-footer {
 
 .module-card {
   background: #fff;
-  border: 1px solid #eef2f7;
-  border-radius: 18px;
+  border: 1px solid #e2e8f0;
+  border-top: 3px solid var(--accent, #185FA5);
+  border-radius: 14px;
   padding: 1.75rem;
   text-decoration: none;
   color: inherit;
@@ -560,13 +576,15 @@ body.landing-page .brand-footer {
   position: relative;
   z-index: 1;
   text-align: center;
-  background: #f8fafc;
-  border-radius: 16px;
-  padding: 1.5rem 1rem 1.25rem;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1.75rem 1rem 1.5rem;
 }
 
 .landing-section.alt .process-step {
   background: #fff;
+  border-color: #d6deea;
 }
 
 .process-num {
@@ -660,7 +678,7 @@ body.landing-page .brand-footer {
 
 .ai-section {
   position: relative;
-  padding: 6rem 1.5rem;
+  padding: 4.5rem 1.5rem;
   background: #0b1d3a;
   color: #e2e8f0;
   overflow: hidden;
