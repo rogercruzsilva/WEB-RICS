@@ -88,9 +88,27 @@ body.landing-page .brand-footer {
 /* ---------------------- HERO ---------------------- */
 .landing-hero {
   position: relative;
-  background: #ffffff;
-  padding: 6rem 1.5rem 5rem;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(24, 95, 165, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 10% 90%, rgba(59, 109, 17, 0.06) 0%, transparent 40%),
+    linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  padding: 5rem 1.5rem 4rem;
   border-bottom: 1px solid #e2e8f0;
+}
+
+.landing-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .hero-inner {
@@ -226,87 +244,33 @@ body.landing-page .brand-footer {
 .hero-trust .avatars span:nth-child(2) { background: #3B6D11; }
 .hero-trust .avatars span:nth-child(3) { background: #993556; }
 
-/* Hero visual (mock dashboard) */
+/* Hero visual (screenshot del producto) */
 .hero-visual {
   position: relative;
   animation: fadeUp 0.8s 0.2s ease both;
 }
 
-.mock-card {
-  background: #fff;
-  border-radius: 18px;
-  box-shadow:
-    0 30px 60px -25px rgba(15, 23, 42, 0.25),
-    0 0 0 1px rgba(15, 23, 42, 0.05);
-  padding: 1.25rem;
+.hero-screenshot {
   position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow:
+    0 40px 80px -30px rgba(15, 23, 42, 0.35),
+    0 0 0 1px rgba(15, 23, 42, 0.08);
+  background: #fff;
+  transform: perspective(1400px) rotateY(-4deg) rotateX(2deg);
+  transition: transform 0.5s ease;
   z-index: 2;
 }
 
-.mock-bar {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding-bottom: 0.85rem;
-  border-bottom: 1px solid #f1f5f9;
-  margin-bottom: 1rem;
+.hero-screenshot:hover {
+  transform: perspective(1400px) rotateY(0deg) rotateX(0deg);
 }
 
-.mock-bar i {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #ef4444;
-}
-.mock-bar i:nth-child(2) { background: #f59e0b; }
-.mock-bar i:nth-child(3) { background: #22c55e; }
-
-.mock-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-}
-
-.mock-tile {
-  background: #f8fafc;
-  border-radius: 12px;
-  padding: 0.85rem;
-  border: 1px solid rgba(15, 23, 42, 0.05);
-}
-
-.mock-tile .label {
-  font-size: 0.68rem;
-  color: #64748b;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  font-weight: 600;
-}
-
-.mock-tile .value {
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: #0b1d3a;
-  margin-top: 0.25rem;
-}
-
-.mock-tile .delta {
-  font-size: 0.72rem;
-  color: #16a34a;
-  font-weight: 600;
-}
-
-.mock-chart {
-  height: 110px;
-  background: #f8fafc;
-  border-radius: 12px;
-  position: relative;
-  overflow: hidden;
-}
-
-.mock-chart svg {
+.hero-screenshot img {
+  display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
 .floating-pill {
